@@ -41,34 +41,41 @@ def output_to_file(fd, root, node_name):
     fd.truncate()
 
      
-CMD_EXEC = "mbed test --compile-list"
-
-def main(output):
+#CMD_EXEC = "mbed test --compile-list"
+CMD_EXEC = "myfind . -name \"*.cpp\""
+def main(output,paths):
     global num_test_cases
     root = OrderedDict({"name": "test", "children": []})
-    op = check_output(CMD_EXEC).split("\n")
     
-    for line in op:
-        line_toks=line.strip().split(":")
-        if(line_toks[0].startswith("Path")):
-            #print(line_toks[1].strip())
-            test_dir = line_toks[1].strip()
-            for filename in os.listdir(test_dir):
-                if filename.endswith(".cpp") or filename.endswith(".c"): 
-                    test_file_path = test_dir + "\\" +filename
-                    num_test_cases=0
-                    with open(test_file_path) as f:
-                        for line in f:
-                            line=line.strip()
-                            if line.startswith("Case(") or line.startswith("{\"Testing "):
-                                print("Test Case: File: %s : %s" % (str(test_file_path), str(line)))
-                                num_test_cases=num_test_cases+1
-                    if(num_test_cases > 0):        
-                        add_node(root, test_dir, num_test_cases)            
-    
+    exec_cmd = ""
+    op = None
+    for eachpath in paths:
+        exec_cmd = "myfind " + eachpath + " -name \"*.cpp\""
+        #exec_cmd = "myfind . -name \"*.c*\""
+        print(exec_cmd)
+        #prev_dir=os.getcwd()
+        #os.chdir(eachpath)
+        op = check_output(exec_cmd).split("\n")
+        for line in op:
+            print(line)
+            filename = str(line).replace("/","\\")
+            print(filename)
+            if filename.endswith(".cpp") or filename.endswith(".c"): 
+                num_test_cases=0
+                print(filename)
+                with open(filename) as f:
+                    for line in f:
+                        line=line.strip()
+                        if line.startswith("Case(") or line.startswith("{\"Testing "):
+                            #print("Test Case: File: %s : %s" % (str(filename), str(line)))
+                            num_test_cases=num_test_cases+1
+                if(num_test_cases > 0):        
+                    add_node(root, filename, num_test_cases)            
+        #os.chdir(prev_dir)            
+        
     output_to_file(output, root, "mbed_test_map")
     
 if __name__ == '__main__':
-    main(open("testdata.js", "wb"))
+    main(open("testdata.js", "wb"),sys.argv[1:])
 
     
