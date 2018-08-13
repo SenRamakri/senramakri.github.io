@@ -2,11 +2,161 @@ var mbed_test_map = {
     "name": "test", 
     "children": [
         {
-            "name": "mbed-os", 
+            "name": "mbed-os-fork1", 
             "children": [
                 {
                     "name": "features", 
                     "children": [
+                        {
+                            "name": "cellular", 
+                            "children": [
+                                {
+                                    "name": "TESTS", 
+                                    "children": [
+                                        {
+                                            "name": "api", 
+                                            "children": [
+                                                {
+                                                    "name": "cellular_device", 
+                                                    "children": [
+                                                        {
+                                                            "name": "main.cpp", 
+                                                            "size": 4
+                                                        }
+                                                    ]
+                                                }, 
+                                                {
+                                                    "name": "cellular_information", 
+                                                    "children": [
+                                                        {
+                                                            "name": "main.cpp", 
+                                                            "size": 2
+                                                        }
+                                                    ]
+                                                }, 
+                                                {
+                                                    "name": "cellular_network", 
+                                                    "children": [
+                                                        {
+                                                            "name": "main.cpp", 
+                                                            "size": 10
+                                                        }
+                                                    ]
+                                                }, 
+                                                {
+                                                    "name": "cellular_power", 
+                                                    "children": [
+                                                        {
+                                                            "name": "main.cpp", 
+                                                            "size": 1
+                                                        }
+                                                    ]
+                                                }, 
+                                                {
+                                                    "name": "cellular_sim", 
+                                                    "children": [
+                                                        {
+                                                            "name": "main.cpp", 
+                                                            "size": 2
+                                                        }
+                                                    ]
+                                                }, 
+                                                {
+                                                    "name": "cellular_sms", 
+                                                    "children": [
+                                                        {
+                                                            "name": "main.cpp", 
+                                                            "size": 17
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "name": "socket", 
+                                            "children": [
+                                                {
+                                                    "name": "udp", 
+                                                    "children": [
+                                                        {
+                                                            "name": "main.cpp", 
+                                                            "size": 4
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "device_key", 
+                            "children": [
+                                {
+                                    "name": "TESTS", 
+                                    "children": [
+                                        {
+                                            "name": "device_key", 
+                                            "children": [
+                                                {
+                                                    "name": "functionality", 
+                                                    "children": [
+                                                        {
+                                                            "name": "main.cpp", 
+                                                            "size": 10
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "FEATURE_BLE", 
+                            "children": [
+                                {
+                                    "name": "targets", 
+                                    "children": [
+                                        {
+                                            "name": "TARGET_CORDIO", 
+                                            "children": [
+                                                {
+                                                    "name": "TESTS", 
+                                                    "children": [
+                                                        {
+                                                            "name": "cordio_hci", 
+                                                            "children": [
+                                                                {
+                                                                    "name": "driver", 
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "main.cpp", 
+                                                                            "size": 1
+                                                                        }
+                                                                    ]
+                                                                }, 
+                                                                {
+                                                                    "name": "transport", 
+                                                                    "children": [
+                                                                        {
+                                                                            "name": "main.cpp", 
+                                                                            "size": 2
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, 
                         {
                             "name": "filesystem", 
                             "children": [
@@ -264,6 +414,15 @@ var mbed_test_map = {
                                                                     "size": 2
                                                                 }
                                                             ]
+                                                        }, 
+                                                        {
+                                                            "name": "test_skip", 
+                                                            "children": [
+                                                                {
+                                                                    "name": "main.cpp", 
+                                                                    "size": 2
+                                                                }
+                                                            ]
                                                         }
                                                     ]
                                                 }
@@ -298,6 +457,30 @@ var mbed_test_map = {
                                                                     ]
                                                                 }
                                                             ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "nvstore", 
+                            "children": [
+                                {
+                                    "name": "TESTS", 
+                                    "children": [
+                                        {
+                                            "name": "nvstore", 
+                                            "children": [
+                                                {
+                                                    "name": "functionality", 
+                                                    "children": [
+                                                        {
+                                                            "name": "main.cpp", 
+                                                            "size": 3
                                                         }
                                                     ]
                                                 }
@@ -551,11 +734,29 @@ var mbed_test_map = {
                                     "name": "filesystem", 
                                     "children": [
                                         {
+                                            "name": "buffered_block_device", 
+                                            "children": [
+                                                {
+                                                    "name": "main.cpp", 
+                                                    "size": 1
+                                                }
+                                            ]
+                                        }, 
+                                        {
                                             "name": "fat_filesystem", 
                                             "children": [
                                                 {
                                                     "name": "main.cpp", 
                                                     "size": 4
+                                                }
+                                            ]
+                                        }, 
+                                        {
+                                            "name": "flashsim_block_device", 
+                                            "children": [
+                                                {
+                                                    "name": "main.cpp", 
+                                                    "size": 1
                                                 }
                                             ]
                                         }, 
@@ -582,7 +783,7 @@ var mbed_test_map = {
                                             "children": [
                                                 {
                                                     "name": "main.cpp", 
-                                                    "size": 3
+                                                    "size": 4
                                                 }
                                             ]
                                         }, 
@@ -646,7 +847,7 @@ var mbed_test_map = {
                                     "children": [
                                         {
                                             "name": "main.cpp", 
-                                            "size": 13
+                                            "size": 14
                                         }
                                     ]
                                 }, 
@@ -656,6 +857,20 @@ var mbed_test_map = {
                                         {
                                             "name": "main.cpp", 
                                             "size": 3
+                                        }
+                                    ]
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "lorawan", 
+                            "children": [
+                                {
+                                    "name": "loraradio", 
+                                    "children": [
+                                        {
+                                            "name": "main.cpp", 
+                                            "size": 6
                                         }
                                     ]
                                 }
@@ -701,7 +916,7 @@ var mbed_test_map = {
                                     "children": [
                                         {
                                             "name": "main.cpp", 
-                                            "size": 16
+                                            "size": 17
                                         }
                                     ]
                                 }, 
@@ -729,6 +944,15 @@ var mbed_test_map = {
                                         {
                                             "name": "main.cpp", 
                                             "size": 4
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "name": "kernel_tick_count", 
+                                    "children": [
+                                        {
+                                            "name": "main.cpp", 
+                                            "size": 3
                                         }
                                     ]
                                 }, 
@@ -805,6 +1029,15 @@ var mbed_test_map = {
                                     ]
                                 }, 
                                 {
+                                    "name": "systimer", 
+                                    "children": [
+                                        {
+                                            "name": "main.cpp", 
+                                            "size": 8
+                                        }
+                                    ]
+                                }, 
+                                {
                                     "name": "threads", 
                                     "children": [
                                         {
@@ -842,6 +1075,15 @@ var mbed_test_map = {
                             "name": "mbed_drivers", 
                             "children": [
                                 {
+                                    "name": "crc", 
+                                    "children": [
+                                        {
+                                            "name": "main.cpp", 
+                                            "size": 4
+                                        }
+                                    ]
+                                }, 
+                                {
                                     "name": "c_strings", 
                                     "children": [
                                         {
@@ -864,7 +1106,7 @@ var mbed_test_map = {
                                     "children": [
                                         {
                                             "name": "main.cpp", 
-                                            "size": 3
+                                            "size": 5
                                         }
                                     ]
                                 }, 
@@ -891,7 +1133,7 @@ var mbed_test_map = {
                                     "children": [
                                         {
                                             "name": "main.cpp", 
-                                            "size": 6
+                                            "size": 22
                                         }
                                     ]
                                 }, 
@@ -941,15 +1183,6 @@ var mbed_test_map = {
                                     ]
                                 }, 
                                 {
-                                    "name": "stats", 
-                                    "children": [
-                                        {
-                                            "name": "main.cpp", 
-                                            "size": 4
-                                        }
-                                    ]
-                                }, 
-                                {
                                     "name": "stl_features", 
                                     "children": [
                                         {
@@ -968,11 +1201,29 @@ var mbed_test_map = {
                                     ]
                                 }, 
                                 {
+                                    "name": "timeout", 
+                                    "children": [
+                                        {
+                                            "name": "main.cpp", 
+                                            "size": 20
+                                        }
+                                    ]
+                                }, 
+                                {
                                     "name": "timer", 
                                     "children": [
                                         {
                                             "name": "main.cpp", 
                                             "size": 14
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "name": "timerevent", 
+                                    "children": [
+                                        {
+                                            "name": "main.cpp", 
+                                            "size": 7
                                         }
                                     ]
                                 }
@@ -1023,6 +1274,33 @@ var mbed_test_map = {
                             "name": "mbed_hal", 
                             "children": [
                                 {
+                                    "name": "common_tickers", 
+                                    "children": [
+                                        {
+                                            "name": "main.cpp", 
+                                            "size": 22
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "name": "common_tickers_freq", 
+                                    "children": [
+                                        {
+                                            "name": "main.cpp", 
+                                            "size": 2
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "name": "crc", 
+                                    "children": [
+                                        {
+                                            "name": "main.cpp", 
+                                            "size": 6
+                                        }
+                                    ]
+                                }, 
+                                {
                                     "name": "critical_section", 
                                     "children": [
                                         {
@@ -1039,7 +1317,7 @@ var mbed_test_map = {
                                             "children": [
                                                 {
                                                     "name": "main.cpp", 
-                                                    "size": 6
+                                                    "size": 5
                                                 }
                                             ]
                                         }
@@ -1050,16 +1328,16 @@ var mbed_test_map = {
                                     "children": [
                                         {
                                             "name": "main.cpp", 
-                                            "size": 6
+                                            "size": 3
                                         }
                                     ]
                                 }, 
                                 {
-                                    "name": "lp_us_tickers", 
+                                    "name": "rtc", 
                                     "children": [
                                         {
                                             "name": "main.cpp", 
-                                            "size": 6
+                                            "size": 8
                                         }
                                     ]
                                 }, 
@@ -1082,6 +1360,15 @@ var mbed_test_map = {
                                     ]
                                 }, 
                                 {
+                                    "name": "sleep", 
+                                    "children": [
+                                        {
+                                            "name": "main.cpp", 
+                                            "size": 3
+                                        }
+                                    ]
+                                }, 
+                                {
                                     "name": "sleep_manager", 
                                     "children": [
                                         {
@@ -1096,6 +1383,15 @@ var mbed_test_map = {
                                         {
                                             "name": "main.cpp", 
                                             "size": 2
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "name": "us_ticker", 
+                                    "children": [
+                                        {
+                                            "name": "main.cpp", 
+                                            "size": 1
                                         }
                                     ]
                                 }
@@ -1114,11 +1410,74 @@ var mbed_test_map = {
                                     ]
                                 }, 
                                 {
+                                    "name": "error_handling", 
+                                    "children": [
+                                        {
+                                            "name": "main.cpp", 
+                                            "size": 7
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "name": "FileHandle", 
+                                    "children": [
+                                        {
+                                            "name": "main.cpp", 
+                                            "size": 6
+                                        }
+                                    ]
+                                }, 
+                                {
                                     "name": "SingletonPtr", 
                                     "children": [
                                         {
                                             "name": "main.cpp", 
                                             "size": 2
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "name": "stats_cpu", 
+                                    "children": [
+                                        {
+                                            "name": "main.cpp", 
+                                            "size": 2
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "name": "stats_heap", 
+                                    "children": [
+                                        {
+                                            "name": "main.cpp", 
+                                            "size": 4
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "name": "stats_sys", 
+                                    "children": [
+                                        {
+                                            "name": "main.cpp", 
+                                            "size": 1
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "name": "stats_thread", 
+                                    "children": [
+                                        {
+                                            "name": "main.cpp", 
+                                            "size": 4
+                                        }
+                                    ]
+                                }, 
+                                {
+                                    "name": "Transaction", 
+                                    "children": [
+                                        {
+                                            "name": "main.cpp", 
+                                            "size": 4
                                         }
                                     ]
                                 }
@@ -1128,128 +1487,29 @@ var mbed_test_map = {
                             "name": "netsocket", 
                             "children": [
                                 {
-                                    "name": "connectivity", 
+                                    "name": "dns", 
                                     "children": [
                                         {
                                             "name": "main.cpp", 
-                                            "size": 2
+                                            "size": 10
                                         }
                                     ]
                                 }, 
                                 {
-                                    "name": "gethostbyname", 
+                                    "name": "tcp", 
                                     "children": [
                                         {
                                             "name": "main.cpp", 
-                                            "size": 4
+                                            "size": 14
                                         }
                                     ]
                                 }, 
                                 {
-                                    "name": "ip_parsing", 
+                                    "name": "udp", 
                                     "children": [
                                         {
                                             "name": "main.cpp", 
                                             "size": 9
-                                        }
-                                    ]
-                                }, 
-                                {
-                                    "name": "socket_sigio", 
-                                    "children": [
-                                        {
-                                            "name": "main.cpp", 
-                                            "size": 3
-                                        }
-                                    ]
-                                }, 
-                                {
-                                    "name": "tcp_echo", 
-                                    "children": [
-                                        {
-                                            "name": "main.cpp", 
-                                            "size": 1
-                                        }
-                                    ]
-                                }, 
-                                {
-                                    "name": "tcp_echo_parallel", 
-                                    "children": [
-                                        {
-                                            "name": "main.cpp", 
-                                            "size": 1
-                                        }
-                                    ]
-                                }, 
-                                {
-                                    "name": "tcp_hello_world", 
-                                    "children": [
-                                        {
-                                            "name": "main.cpp", 
-                                            "size": 1
-                                        }
-                                    ]
-                                }, 
-                                {
-                                    "name": "tcp_packet_pressure", 
-                                    "children": [
-                                        {
-                                            "name": "main.cpp", 
-                                            "size": 1
-                                        }
-                                    ]
-                                }, 
-                                {
-                                    "name": "tcp_packet_pressure_parallel", 
-                                    "children": [
-                                        {
-                                            "name": "main.cpp", 
-                                            "size": 1
-                                        }
-                                    ]
-                                }, 
-                                {
-                                    "name": "udp_dtls_handshake", 
-                                    "children": [
-                                        {
-                                            "name": "main.cpp", 
-                                            "size": 1
-                                        }
-                                    ]
-                                }, 
-                                {
-                                    "name": "udp_echo", 
-                                    "children": [
-                                        {
-                                            "name": "main.cpp", 
-                                            "size": 1
-                                        }
-                                    ]
-                                }, 
-                                {
-                                    "name": "udp_echo_parallel", 
-                                    "children": [
-                                        {
-                                            "name": "main.cpp", 
-                                            "size": 1
-                                        }
-                                    ]
-                                }, 
-                                {
-                                    "name": "udp_packet_pressure", 
-                                    "children": [
-                                        {
-                                            "name": "main.cpp", 
-                                            "size": 1
-                                        }
-                                    ]
-                                }, 
-                                {
-                                    "name": "udp_packet_pressure_parallel", 
-                                    "children": [
-                                        {
-                                            "name": "main.cpp", 
-                                            "size": 1
                                         }
                                     ]
                                 }
@@ -1263,7 +1523,7 @@ var mbed_test_map = {
                                     "children": [
                                         {
                                             "name": "main.cpp", 
-                                            "size": 5
+                                            "size": 8
                                         }
                                     ]
                                 }, 
@@ -1273,20 +1533,6 @@ var mbed_test_map = {
                                         {
                                             "name": "main.cpp", 
                                             "size": 16
-                                        }
-                                    ]
-                                }
-                            ]
-                        }, 
-                        {
-                            "name": "storage_abstraction", 
-                            "children": [
-                                {
-                                    "name": "basicAPI", 
-                                    "children": [
-                                        {
-                                            "name": "basicAPI.cpp", 
-                                            "size": 30
                                         }
                                     ]
                                 }
