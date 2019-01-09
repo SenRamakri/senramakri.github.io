@@ -67,14 +67,16 @@ def main(output,paths):
                     for line in f:
                         line=line.strip()
                         if line.startswith("Case(") or line.startswith("{\"Testing "):
-                            #print("Test Case: File: %s : %s" % (str(filename), str(line)))
+                            print("Test Case: File: %s : %s" % (str(filename), str(line)))
                             num_test_cases=num_test_cases+1
                 if(num_test_cases > 0):        
                     add_node(root, filename, num_test_cases)            
         #os.chdir(prev_dir)            
         
     output_to_file(output, root, "mbed_test_map")
-    
+
+#Run as below    
+#C:\github>senramakri.github.io\mbed-os-test-report\count_tests.py mbed-os ci-test-shield\TESTS ci-test-shield\SDDriver    
 if __name__ == '__main__':
     main(open("testdata.js", "wb"),sys.argv[1:])
 
