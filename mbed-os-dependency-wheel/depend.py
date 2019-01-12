@@ -56,23 +56,40 @@ if __name__ == '__main__':
         sys.exit(1)
         
     if not path.exists(mapfile):
-        print("Map file %s does not exist"%(str(p)))
+        print("Map file %s does not exist"%(str(mapfile)))
         parser.print_usage()
         sys.exit(1)
         
     print("Inputs:")        
     print("\tMapfile: %s"%(mapfile))
+    
+    objlines = []
         
     projdir = mapfile[0:mapfile.lower().find("build")]
-    objlines = [os.path.join(projdir,line.strip().split()[-1]).split('(')[0].strip() for line in open(mapfile) if line.strip().startswith('0x') and 'PAD' not in line]
+    for line in open(mapfile):
+        if line.strip().startswith('0x') and 'PAD' not in line:
+            line=(line.strip().split(None, 5)[-1])
+            if line[0] == "*":
+                line=(line.strip().split(None, 2))
+            else:
+                line=(line.strip().split(None, 1))
+            line=str(line[-1])
+            line=line.rsplit('(',1)
+            objlines.append(line[0])        
+    
+    
     objlines=list(set(objlines))
+    #print(objlines)
     
     idx = 0
     for eachline in objlines:
-        objfile = eachline.split('(')[0].strip()
+        #objfile = eachline.split('(')[0].strip()
+        objfile=str(eachline)
+        print("Processing:%s"%str(objfile))
         if(os.path.exists(objfile)):
             idx += 1
             if(objfile not in objectsset):
+                #print(eachline)
                 get_object_symbols(objfile)
             objectsidx[os.path.basename(objfile.strip())]=idx
             objectsset.append(os.path.basename(objfile.strip()))
